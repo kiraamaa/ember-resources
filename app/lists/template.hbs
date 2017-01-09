@@ -1,4 +1,6 @@
 <h2>ListR</h2>
 {{#each model as |list|}}
-  {{listr-list list=list}}
+  {{listr-list/card list=list}}
 {{/each}}
+
+{{#link-to 'application'}}Link to home{{/link-to}}
