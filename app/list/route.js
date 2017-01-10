@@ -11,5 +11,14 @@ export default Ember.Route.extend({
       console.log("inside list route after toggle and item is ", item.get('done'));
       item.save();
     },
-  }
+    delete (item) {
+      item.destroyRecord();
+    },
+    createItem (newItem) {
+      console.log("inside route createItem, newItem is ", newItem);
+      let item = this.get('store').createRecord('item', newItem);
+      console.log("inside route createItem, item is ", item);
+      item.save();
+    },
+  },
 });
